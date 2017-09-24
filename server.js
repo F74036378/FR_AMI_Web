@@ -35,6 +35,20 @@ app.post('/get-data', (req, res) => {
   })
 })
 
+app.post('/train-data', (req, res) => {
+  var options = {
+  mode: 'text',
+  pythonOptions: ['-u'],
+  scriptPath: '../',
+  args: ['../../../FR_AMI_ser/train_dataset/', '../../../FR_AMI_ser/models_now/20170511-185253/', '../../../FR_AMI_ser/classifier.pkl']
+  }
+  pyshell.run('Classifier_Training_Executive_v2.py', options, function (err, results) {
+  if (err) throw err;
+  // results is an array consisting of messages collected during execution 
+  console.log('finish_train')
+  })
+})
+
 app.post('/signal', (req, res) => {
   const data = {
     path: '/img/',

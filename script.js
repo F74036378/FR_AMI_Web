@@ -20,6 +20,15 @@ $('#get-datasets').click(function(){
     url:'/get-data',
     method: 'POST'
   }).done(function(data) {
+
+  })
+})
+
+$('#train-datasets').click(function(){
+  $.ajax({
+    url:'/train-data',
+    method: 'POST'
+  }).done(function(data) {
     
   })
 })
