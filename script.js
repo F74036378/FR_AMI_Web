@@ -1,5 +1,5 @@
-let currentImgId = 0
-let path = null
+let currentImgId = 0000
+let path = /img/
 let names = null
 
 const data = 123
@@ -36,5 +36,4 @@ $('#train-datasets').click(function(){
 $('button#next-img').click(function() {
   currentImgId++
   $('img#image').attr('src', path + currentImgId)
-  $('p#image-name').text(names[currentImgId - 1])
 })
