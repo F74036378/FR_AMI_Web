@@ -4,7 +4,6 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
 const app = express()
-require('./db')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
