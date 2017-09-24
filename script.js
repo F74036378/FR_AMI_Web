@@ -15,7 +15,14 @@ $('button#get-data').click(function() {
   })
 })
 
-
+$('#get-datasets').click(function(){
+  $.ajax({
+    url:'/get-data',
+    method: 'POST'
+  }).done(function(data) {
+    
+  })
+})
 
 $('button#next-img').click(function() {
   currentImgId++
