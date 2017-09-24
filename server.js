@@ -2,16 +2,16 @@ const express = require('express')
 const fs = require('fs')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const pyshell = require('python-shell')
 
 const app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.get('/:name/:id', (req, res) => {
+app.get('/:id', (req, res) => {
   const id = req.params.id
-  const name = req.params.name
-  fs.createReadStream(`/home/server/FR_AMI_ser/train_dataset/${name}/${name}_000${id}.png`).pipe(res)
+  fs.createReadStream(`/home/server/FR_AMI_git/web_pic/$pic_${id}.png`).pipe(res)
 })
 
 app.get('/script.js', (req, res) => {

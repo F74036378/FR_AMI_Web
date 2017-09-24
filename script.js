@@ -15,6 +15,8 @@ $('button#get-data').click(function() {
   })
 })
 
+
+
 $('button#next-img').click(function() {
   currentImgId++
   $('img#image').attr('src', path + currentImgId)
