@@ -34,7 +34,7 @@ $('#train-datasets').click(function(){
 })
 
 $('button#next-img').click(function() {
-  currentImgId++
   console.log(path + currentImgId)
   $('img#image').attr('src', path + currentImgId)
+  currentImgId++
 })
