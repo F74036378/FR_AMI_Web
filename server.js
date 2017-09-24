@@ -9,9 +9,9 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.get('/:id', (req, res) => {
+app.get('/img', (req, res) => {
   const id = req.params.id
-  fs.createReadStream(`../web_pic/pic_${id}.png`).pipe(res)
+  fs.createReadStream(`../web_pic/pic_0001.png`).pipe(res)
 })
 
 app.get('/script.js', (req, res) => {
