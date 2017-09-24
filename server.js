@@ -11,7 +11,7 @@ app.use(bodyParser.json())
 
 app.get('/:id', (req, res) => {
   const id = req.params.id
-  fs.createReadStream(`/home/server/FR_AMI_git/server_src/web_pic/pic_${id}.png`).pipe(res)
+  fs.createReadStream(`../web_pic/pic_${id}.png`).pipe(res)
 })
 
 app.get('/script.js', (req, res) => {
