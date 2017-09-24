@@ -22,6 +22,19 @@ app.get('/', (req, res) => {
   fs.createReadStream('./index.html').pipe(res)
 })
 
+app.post('/get-data', (req, res) => {
+  var options = {
+  mode: 'text',
+  pythonOptions: ['-u'],
+  scriptPath: '../',
+  }
+  pyshell.run('datasets_downloader.py', options, function (err, results) {
+  if (err) throw err;
+  // results is an array consisting of messages collected during execution 
+  console.log('finish')
+  })
+})
+
 app.post('/signal', (req, res) => {
   const data = {
     path: '/img/',
